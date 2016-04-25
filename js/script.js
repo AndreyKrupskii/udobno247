@@ -75,6 +75,7 @@ $(document).ready(function(){
 		mouseDrag: false,
 		smartSpeed: 300,
 		dotsSpeed: 200,
+		
 		// autoplay: true,
 		// autoplayTimeout: 10000
 	});
