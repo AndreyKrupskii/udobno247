@@ -71,12 +71,12 @@ $(document).ready(function(){
 	var owl = $('#unic-section .slider-wrap');
 	owl.owlCarousel({
 		items: 1,
-		loop: true,
+		// loop: false, 
 		mouseDrag: false,
 		smartSpeed: 300,
 		dotsSpeed: 200,
-		autoplay: true,
-		autoplayTimeout: 10000
+		// autoplay: true,
+		// autoplayTimeout: 10000
 	});
 	$('#unic-section .owl-controls')
 		.prepend('<span class="dots-caption">Как это работает</span>')
@@ -85,7 +85,7 @@ $(document).ready(function(){
 		owl.trigger('next.owl.carousel');
 	});
 	$('#unic-section #repeat-slider').click(function(){
-		owl.trigger('next.owl.carousel');
+		owl.trigger('to.owl.carousel',0);
 	})
 	$('#unic-section .btn-prev').click(function(){
 		owl.trigger('prev.owl.carousel');
