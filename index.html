@@ -6,6 +6,7 @@
     <title>Developer Page</title>
     <link rel="stylesheet" href="bower_components\Semantic-UI-master\dist/semantic.min.css">
     <link rel="stylesheet" href="bower_components\owl.carousel\assets/owl.carousel.css">
+    <link href="css/slick.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     
 </head>
@@ -79,18 +80,18 @@
   				<i class="search icon"></i>
   				<input type="text" placeholder="Поиск...">
   			</div>
-  			<!-- <a href="#" class="phone-search"><i class="search icon"></i></a> -->
+  			<a href="#" class="phone-search dropdown">
+  				<i class="search icon"></i>
+  				
+  			</a>
   		</div>
   		<div class="header-bottom__item header-bottom__item--dropdown">
   			<div class="ui basic floating dropdown button">
-  					<a href="#" class="phone-search"><i class="search icon"></i></a>
+  					<!-- <a href="#" class="phone-search"><i class="search icon"></i></a> -->
   					<div class="text">Выберите магазин</div>
   					<i class="angle down icon"></i>
   					<div id="dropdown-with-search" class="menu">
-  						<div class="ui input">
-  							<i class="search icon"></i>
-  							<input type="text" placeholder="Поиск...">
-  						</div>
+  						
   						<div class="menu-caption"><p>Каталог какого магазина вы<br>хотите посмотреть?</p></div>
   						<div class="item"><div class="shop-i"><img src="img/metro(small).png" alt="metro"></div></div>
   						<div class="item"><div class="shop-i"><img src="img/okey(small).png" alt="metro"></div></div>
@@ -114,6 +115,11 @@
   					</a>
   				</li>
   			</ul>
+  		</div>
+  	</div>
+  	<div class="ui menu hidden custom-search">
+  		<div class="ui phone-input input">
+  			<input type="text" placeholder="Поиск...">
   		</div>
   	</div>
   </header>
@@ -273,34 +279,37 @@
     					<h1 class="main__tab__article">Готовы сделать свой<br>первый заказ?
     					</h1>
     					<p class="main__tab__text">Откуда вам доставить продукты?</p>
+              <div class="main__tab__shops clearfix">
+              <a href="#" class="main__tab--link">
+                <img src="img/metro.png" alt="metro">
+              </a>
+              <a href="#" class="main__tab--link">
+                <img src="img/pobeda.png" alt="pobeda">
+              </a>
+              <a href="#" class="main__tab--link main__link--last">
+                <img src="img/okey.png" alt="okey">
+              </a>
+              <a href="#" class="main__tab--link">
+                <img src="img/metro.png" alt="metro">
+              </a>
+              <a href="#" class="main__tab--link">
+                <img src="img/pobeda.png" alt="pobeda">
+              </a>
+              <a href="#" class="main__tab--link main__link--last">
+                <img src="img/okey.png" alt="okey">
+              </a>
+              <a href="#" class="main__tab--link">
+                <img src="img/metro.png" alt="metro">
+              </a>
+              <a href="#" class="main__tab--link">
+                <img src="img/pobeda.png" alt="pobeda">
+              </a>
+            </div>
+            <div class="next-small-slide next-small-slide-right"><i class="angle right icon"></i></div>
+            <div class="next-small-slide next-small-slide-left"><i class="angle left icon"></i></div>
     				</div> 
-    				<div class="next-small-slide"><i class="angle right icon"></i></div>
-    				<div class="main__tab__shops clearfix">
-    					<a href="#" class="main__tab--link">
-    						<img src="img/metro.png" alt="metro">
-    					</a>
-    					<a href="#" class="main__tab--link">
-    						<img src="img/pobeda.png" alt="pobeda">
-    					</a>
-    					<a href="#" class="main__tab--link main__link--last">
-    						<img src="img/okey.png" alt="okey">
-    					</a>
-    					<a href="#" class="main__tab--link">
-    						<img src="img/metro.png" alt="metro">
-    					</a>
-    					<a href="#" class="main__tab--link">
-    						<img src="img/pobeda.png" alt="pobeda">
-    					</a>
-    					<a href="#" class="main__tab--link main__link--last">
-    						<img src="img/okey.png" alt="okey">
-    					</a>
-    					<a href="#" class="main__tab--link">
-    						<img src="img/metro.png" alt="metro">
-    					</a>
-    					<a href="#" class="main__tab--link">
-    						<img src="img/pobeda.png" alt="pobeda">
-    					</a>
-    				</div>
+    				
+    				
     				<a href="#" id="" class="big-view main__tab--link repeat-slide how-it-work">
     					<h2>Повторить</h2>
     					<span class="what-icon">?</span>
@@ -310,6 +319,9 @@
     						<h2>Повторить</h2>
     						<span class="what-icon">?</span>
     					</a>
+              <a href="#" id="" class="small-view choose-shop main__tab--link how-it-work">
+                <h2>Выберете магазин</h2>
+              </a>
     				</div>
     		</div>
   		</div>
@@ -351,6 +363,7 @@
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components\owl.carousel/owl.carousel.min.js"></script>
   <!-- <script src="js/scroll.js"></script> -->
+  <script src="js/slick.min.js"></script> 
   <script src="bower_components/Semantic-UI-master/dist/semantic.min.js"></script>
   <script src="js/script.js"></script>
 </body>
