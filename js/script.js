@@ -29,7 +29,7 @@ $(document).ready(function(){
 	setMainSectH();
 	$(window).resize(function(e) {
 		setMainSectH();
-		setSliderOffset();
+		// setSliderOffset();
 		setBtnOffset();
 	});
 
@@ -73,14 +73,17 @@ $(document).ready(function(){
 		}
 		
 	});
-	$('.home-tab .next-small-slide').click(function(){
+	$('.home-tab .next-small-slide-right').click(function(){
 		smallOwlSlider1.trigger('next.owl.carousel');
 	});
-	function setSliderOffset(){
-		var l = $('.ui.container').css('margin-left');
-		$('.home-tab .main__tab__shops').css('margin-left', l);
-	}
-	setSliderOffset();
+	$('.home-tab .next-small-slide-left').click(function(){
+		smallOwlSlider1.trigger('prev.owl.carousel');
+	});
+	// function setSliderOffset(){
+	// 	var l = $('.ui.container').css('margin-left');
+	// 	$('.home-tab .main__tab__shops').css('margin-left', l);
+	// }
+	// setSliderOffset();
 	function setBtnOffset() {
 		var l = parseInt($('.ui.container').css('margin-left'));
 		$('.how-it-work').css('right', l);
@@ -177,14 +180,25 @@ $(document).ready(function(){
 	$(window).resize(function(e) {
 		setMinContHeight();
 	});
-	$('.header-bottom__item--search .search.icon').click(function(event) {
-		$('.custom-search').fadeIn(200);
+	$('.header-bottom__item--search .phone-search').click(function(event) {
+		if($(this).hasClass('faded')){
+			$(this).removeClass('faded');
+			return; 
+		}else{
+			$('.custom-search').fadeIn(200).addClass('faded');
+		}
+		
 	});
 	$(document).mouseup(function (e) {
 		e.preventDefault();
 		var container = $('.custom-search');
+		
 		if (container.has(e.target).length === 0){
+			if($('.header-bottom__item--search .phone-search').has(e.target).length === 1){
+				return;
+			}
 			$(container).fadeOut(200);
+			$('.header-bottom__item--search .phone-search').removeClass('faded');
 		}
 	});
 	$('.choose-shop').click(function(e) {
