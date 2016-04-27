@@ -51,10 +51,11 @@ $(document).ready(function(){
 			$(this).next().slideDown(400).removeClass('hidden');
 		}
 	});
-	var smallOwlSlider = $('.main__tab .main__tab__shops');
-	smallOwlSlider.owlCarousel({
+	var smallOwlSlider1 = $('.home-tab .main__tab__shops');
+	smallOwlSlider1.owlCarousel({
 		autoWidth: true,
 		items: 4,
+		loop: true,
 		responsive : {
 			0:{
 				items: 3
@@ -69,9 +70,11 @@ $(document).ready(function(){
 				items: 6
 			},
 		}
+		
 	});
-	$('.main__tab .next-small-slide').click(function(){
-		smallOwlSlider.trigger('next.owl.carousel');
+	$('.home-tab .next-small-slide').click(function(){
+		console.log('wtf')
+		smallOwlSlider1.trigger('next.owl.carousel');
 	});
 	function setSliderOffset(){
 		var l = $('.ui.container').css('margin-left');
@@ -121,6 +124,7 @@ var smallOwlSlider = $('.slider-item-5 .main__tab__shops');
 	smallOwlSlider.owlCarousel({
 		autoWidth: true,
 		items: 4,
+		loop: true,
 		responsive : {
 			0:{
 				items: 3
