@@ -39,6 +39,7 @@ $(document).ready(function(){
 	    context: $('body .bottom.segment')
 	  })
 	  .sidebar('attach events', 'body .btn-category')
+	$('.cat-menu .menu-item:nth-child(1)').addClass('open');
 	$('.menu-options').click(function(e) {
 		e.preventDefault();
 		if($(this).parent().hasClass('open')){
@@ -47,7 +48,7 @@ $(document).ready(function(){
 		else{
 			$('.menu-item').removeClass('open');
 			$(this).parent().addClass('open');
-			$('.cat-submenu').slideUp(400).addClass('hidden');
+			$('.cat-submenu').slideUp(400);
 			$(this).next().slideDown(400).removeClass('hidden');
 		}
 	});
@@ -73,7 +74,6 @@ $(document).ready(function(){
 		
 	});
 	$('.home-tab .next-small-slide').click(function(){
-		console.log('wtf')
 		smallOwlSlider1.trigger('next.owl.carousel');
 	});
 	function setSliderOffset(){
@@ -86,11 +86,11 @@ $(document).ready(function(){
 		$('.how-it-work').css('right', l);
 	}
 	setBtnOffset();
-	
 
-	var owl = $('#unic-section .slider-wrap');
-	owl.owlCarousel({
+	var owl1 = $('#unic-section .slider-wrap');
+	owl1.owlCarousel({
 		items: 1,
+		loop: false,
 		mouseDrag: false,
 		smartSpeed: 300,
 		dotsSpeed: 200,
@@ -99,14 +99,35 @@ $(document).ready(function(){
 		.prepend('<span class="dots-caption">Как это работает</span>')
 		.append('<i class="remove icon"></i>');
 	$('#unic-section .btn-next').click(function(){
-		owl.trigger('next.owl.carousel');
+		owl1.trigger('next.owl.carousel');
+		setTimeout(function(){
+			if($('.slider-item-5').parent().hasClass('active')){
+				$('.btn-next').fadeOut();
+			} else{
+				$('.btn-next').fadeIn();
+			}
+		},200);
 	});
 	$('#unic-section .repeat-slide').click(function(e){
 		e.preventDefault();
-		owl.trigger('to.owl.carousel',0);
+		owl1.trigger('to.owl.carousel',0);
+		setTimeout(function(){
+			if($('.slider-item-5').parent().hasClass('active')){
+				$('.btn-next').fadeOut();
+			} else{
+				$('.btn-next').fadeIn();
+			}
+		},200);
 	})
 	$('#unic-section .btn-prev').click(function(){
-		owl.trigger('prev.owl.carousel');
+		owl1.trigger('prev.owl.carousel');
+		setTimeout(function(){
+			if($('.slider-item-5').parent().hasClass('active')){
+				$('.btn-next').fadeOut();
+			} else{
+				$('.btn-next').fadeIn();
+			}
+		},200);
 	});
 	$('#unic-section .slider-tab').addClass('hidden-tab');
 	$('#unic-section .remove').click(function(e){
@@ -120,29 +141,37 @@ $(document).ready(function(){
 		$('#unic-section .main__tab--w.slider-tab').addClass('active-tab').removeClass('hidden-tab');
 	});
 
-var smallOwlSlider = $('.slider-item-5 .main__tab__shops');
-	smallOwlSlider.owlCarousel({
+	
+	var smallOwlSlider2 = $('.slider-item-5 .main__tab__shops');
+	smallOwlSlider2.owlCarousel({
 		autoWidth: true,
 		items: 4,
+		// loop: false,
 		loop: true,
 		responsive : {
 			0:{
+				loop: true,
 				items: 3
+
 			},
 			768:{
+				loop: true,
 				items:3
 			},
 			980:{
+				loop: true,
 				items: 5
 			},
 			1400:{
+				loop: true,
 				items: 6
 			},
 		}
 	});
 	$('.slider-item-5 .next-small-slide').click(function(){
-		smallOwlSlider.trigger('next.owl.carousel');
+		smallOwlSlider2.trigger('next.owl.carousel');
 	});
+
 	function setMinContHeight(){
 		var windowHeight = $(window).height();
 		var headerHeight = $('#new-header').height();
@@ -154,4 +183,6 @@ var smallOwlSlider = $('.slider-item-5 .main__tab__shops');
 	$(window).resize(function(event) {
 		setMinContHeight();
 	});
+
+	
 });
